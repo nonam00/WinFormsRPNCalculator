@@ -64,7 +64,7 @@
             // resolveButton
             // 
             resolveButton.Font = new Font("Segoe UI", 15F);
-            resolveButton.Location = new Point(78, 98);
+            resolveButton.Location = new Point(78, 101);
             resolveButton.Name = "resolveButton";
             resolveButton.Size = new Size(207, 46);
             resolveButton.TabIndex = 2;
@@ -75,9 +75,9 @@
             // result
             // 
             result.Font = new Font("Segoe UI", 20F);
-            result.Location = new Point(17, 158);
+            result.Location = new Point(11, 165);
             result.Name = "result";
-            result.Size = new Size(339, 237);
+            result.Size = new Size(339, 227);
             result.TabIndex = 3;
             result.Text = "Result";
             result.TextAlign = ContentAlignment.MiddleCenter;
@@ -103,7 +103,7 @@
             removeVariableButton.TabIndex = 6;
             removeVariableButton.Text = "Remove Variable";
             removeVariableButton.UseVisualStyleBackColor = true;
-            removeVariableButton.Click += this.removeVariableButton_Click;
+            removeVariableButton.Click += removeVariableButton_Click;
             // 
             // addVariableButton
             // 
@@ -126,7 +126,7 @@
             expressionGroup.Size = new Size(356, 411);
             expressionGroup.TabIndex = 6;
             expressionGroup.TabStop = false;
-            expressionGroup.Text = "groupBox2";
+            expressionGroup.Text = "Expression";
             // 
             // MainForm
             // 
@@ -136,6 +136,7 @@
             Controls.Add(expressionGroup);
             Controls.Add(variablesGroup);
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             variablesGroup.ResumeLayout(false);
             expressionGroup.ResumeLayout(false);
