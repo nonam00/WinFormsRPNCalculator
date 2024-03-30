@@ -33,6 +33,7 @@
             resolveButton = new Button();
             result = new Label();
             variablesGroup = new GroupBox();
+            removeVariableButton = new Button();
             addVariableButton = new Button();
             expressionGroup = new GroupBox();
             variablesGroup.SuspendLayout();
@@ -83,6 +84,7 @@
             // 
             // variablesGroup
             // 
+            variablesGroup.Controls.Add(removeVariableButton);
             variablesGroup.Controls.Add(addVariableButton);
             variablesGroup.Controls.Add(variables);
             variablesGroup.Location = new Point(28, 27);
@@ -92,12 +94,23 @@
             variablesGroup.TabStop = false;
             variablesGroup.Text = "Variables";
             // 
+            // removeVariableButton
+            // 
+            removeVariableButton.Font = new Font("Segoe UI", 15F);
+            removeVariableButton.Location = new Point(63, 349);
+            removeVariableButton.Name = "removeVariableButton";
+            removeVariableButton.Size = new Size(180, 43);
+            removeVariableButton.TabIndex = 6;
+            removeVariableButton.Text = "Remove Variable";
+            removeVariableButton.UseVisualStyleBackColor = true;
+            removeVariableButton.Click += this.removeVariableButton_Click;
+            // 
             // addVariableButton
             // 
             addVariableButton.Font = new Font("Segoe UI", 15F);
-            addVariableButton.Location = new Point(70, 309);
+            addVariableButton.Location = new Point(63, 300);
             addVariableButton.Name = "addVariableButton";
-            addVariableButton.Size = new Size(163, 43);
+            addVariableButton.Size = new Size(180, 43);
             addVariableButton.TabIndex = 5;
             addVariableButton.Text = "Add Variable";
             addVariableButton.UseVisualStyleBackColor = true;
@@ -139,5 +152,6 @@
         private GroupBox variablesGroup;
         private Button addVariableButton;
         private GroupBox expressionGroup;
+        private Button removeVariableButton;
     }
 }

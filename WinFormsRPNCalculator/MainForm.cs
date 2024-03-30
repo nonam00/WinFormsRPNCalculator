@@ -23,14 +23,7 @@ namespace WinFormsRPNCalculator
                 }
                 catch(Exception ex)
                 {
-                    string msg = ex.Message;
-                    //if(msg == "Stack empty.")
-                    //{
-                    //    result.Text = "Error in the placement of brackets in the expression";
-                    //}
-                    //else
-                    //{
-                        result.Text = ex.Message;
+                    result.Text = ex.Message;
                 }
                 expression.ExpressionOpz = string.Empty;
             }
@@ -45,9 +38,28 @@ namespace WinFormsRPNCalculator
                 {
                     var variable = form.Variable;
                     expression[variable.Name] = variable.Value;
-                    variables.Items.Add(variable);
+
+                    variables.Items.Clear();
+                    variables.Items.AddRange(expression.Variables);
                 }
             }
         }
+        private void removeVariableButton_Click(object sender, EventArgs e)
+        {
+            if(variables.SelectedItem is not null)
+            {
+                int index = variables.SelectedIndex;
+                variables.Items.RemoveAt(index);
+                if(index >= variables.Items.Count)
+                {
+                    variables.SelectedIndex = variables.Items.Count - 1;
+                }
+                else
+                {
+                    variables.SelectedIndex = index;
+                }
+            }
+        }
+
     }
 }

@@ -5,7 +5,7 @@
         public string Expression { set; get; } = "";
         public string ExpressionOpz { set; get; } = "";
 
-        private Dictionary<string, double> variables = new();
+        private Dictionary<string, double> variables = new Dictionary<string, double>();
 
         private IReadOnlyDictionary<char, string> trigFunctions = new Dictionary<char, string>()
         {
@@ -44,6 +44,23 @@
                 {
                     throw new Exception("Invalid variables name");
                 }
+            }
+        }
+
+        public Variable[] Variables
+        {
+            get
+            {
+                var variablesList = new List<Variable>();
+                foreach (var variable in variables)
+                {
+                    variablesList.Add(new Variable
+                    {
+                        Name = variable.Key,
+                        Value = variable.Value
+                    });
+                }
+                return variablesList.ToArray();
             }
         }
 
